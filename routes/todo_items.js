@@ -1,6 +1,5 @@
 const express = require('express');
-const router = express.Router();        
-router.get('/api/v1/',(req,res)=>{
-    res.send('list of the items')
-})
-module.exports=router;
+const router = express.Router(); 
+const {getAllToDoItems} =require('../controllers/todo_items')        
+router.route('/').get(getAllToDoItems)
+module.exports = router;
